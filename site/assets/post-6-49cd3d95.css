@@ -1,0 +1,18 @@
+.elementor-kit-6{--e-global-color-primary:#3A2707;--e-global-color-secondary:#E05A00;--e-global-color-text:#3A2707;--e-global-color-accent:#F9F5E3;--e-global-color-e94866d:#767A1A;--e-global-color-490eaf3:#FFD15F;--e-global-color-9743c79:#FAF5E2;--e-global-color-697f7c9:#C18553;--e-global-color-3288eb9:#DDBC9B;--e-global-color-376a4cd:#767A1B;--e-global-color-523edaa:#E05B00;--e-global-color-3d22c4b:#FFD25F;--e-global-color-1f089fc:#FFFFFF;--e-global-typography-primary-font-family:"Rubik";--e-global-typography-primary-font-size:16px;--e-global-typography-primary-font-weight:400;--e-global-typography-primary-line-height:24px;--e-global-typography-secondary-font-family:"GveretLevinAlefAlefAlef";--e-global-typography-secondary-font-size:16px;--e-global-typography-secondary-font-weight:400;--e-global-typography-secondary-line-height:24px;--e-global-typography-text-font-family:"Rubik";--e-global-typography-text-font-size:16px;--e-global-typography-text-font-weight:400;--e-global-typography-text-line-height:24px;--e-global-typography-accent-font-family:"FbEinstein";--e-global-typography-accent-font-size:24px;--e-global-typography-accent-font-weight:700;--e-global-typography-accent-line-height:24px;--e-global-typography-409faf4-font-family:"Rubik";--e-global-typography-409faf4-font-size:16px;--e-global-typography-409faf4-font-weight:700;--e-global-typography-409faf4-line-height:24px;}.elementor-kit-6 e-page-transition{background-color:#FFBC7D;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}.e-con{--container-max-width:1140px;}.elementor-widget:not(:last-child){--kit-widget-spacing:20px;}.elementor-element{--widgets-spacing:20px 20px;--widgets-spacing-row:20px;--widgets-spacing-column:20px;}{}h1.entry-title{display:var(--page-title-display);}.site-header .site-branding{flex-direction:column;align-items:stretch;}.site-header{padding-inline-end:0px;padding-inline-start:0px;}.site-footer .site-branding{flex-direction:column;align-items:stretch;}@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-kit-6{--e-global-typography-primary-font-size:16px;--e-global-typography-primary-line-height:24px;--e-global-typography-secondary-font-size:16px;--e-global-typography-secondary-line-height:24px;--e-global-typography-text-font-size:16px;--e-global-typography-text-line-height:24px;--e-global-typography-accent-font-size:24px;--e-global-typography-accent-line-height:24px;--e-global-typography-409faf4-font-size:16px;--e-global-typography-409faf4-line-height:24px;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}/* Start Custom Fonts CSS */@font-face {
+	font-family: 'GveretLevinAlefAlefAlef';
+	font-style: normal;
+	font-weight: normal;
+	font-display: auto;
+	src: url(GveretLevinAlefAlefAlef-Regular-c9b08359.woff2) format('woff2'),
+		url(GveretLevinAlefAlefAlef-Regular-0dc1a082.woff) format('woff');
+}
+/* End Custom Fonts CSS */
+/* Start Custom Fonts CSS */@font-face {
+	font-family: 'FbEinstein';
+	font-style: normal;
+	font-weight: normal;
+	font-display: auto;
+	src: url(woff2FbEinstein-Bold-478ee698.woff2) format('woff2'),
+		url(FbEinstein-Bold-ed69cb14.woff) format('woff');
+}
+/* End Custom Fonts CSS */

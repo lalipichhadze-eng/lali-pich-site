@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Static export of rendered WordPress/Elementor pages.
 
-  python tools/export.py <slug> [<slug> ...]   source/html/<slug>.html -> site/<slug>/index.html (+ site/assets/)
+  python tools/export.py <slug> [<slug> ...]   source/html/<slug>.html -> docs/<slug>/index.html (+ docs/assets/)
   python tools/export.py --all                 every page in source/html
-  python tools/export.py --check               no lali-pich.com / wp-content / wp-includes URL left in site/, all ../assets refs exist
+  python tools/export.py --check               no lali-pich.com / wp-content / wp-includes URL left in docs/, all ../assets refs exist
 
 Assets (CSS/JS/fonts/images, url() and @import inside CSS recursively, any host for stylesheets) are downloaded once
-into site/assets/<stem>-<hash8><ext> (hash of the URL without ?ver, so names are stable and parallel-lane safe).
+into docs/assets/<stem>-<hash8><ext> (hash of the URL without ?ver, so names are stable and parallel-lane safe).
 Raw downloads are cached in tools/.cache (gitignored), so re-runs are offline-fast.
 Elementor Pro JS is dropped (needs the Pro licence server); forms and countdown get a plain replacement (see forms.js).
 """
@@ -15,7 +15,7 @@ import urllib.request, urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC, SITE = os.path.join(ROOT, "source", "html"), os.path.join(ROOT, "site")
+SRC, SITE = os.path.join(ROOT, "source", "html"), os.path.join(ROOT, "docs")
 ASSETS, CACHE = os.path.join(SITE, "assets"), os.path.join(ROOT, "tools", ".cache")
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
 OWN = r"(?:www\.)?lali-pich\.com"
@@ -233,7 +233,7 @@ class Pass:
 
 
 def elementor_extras(A, h):
-    """Elementor lazy-loads handler chunks + libs from urls.assets; mirror them to site/assets/el/."""
+    """Elementor lazy-loads handler chunks + libs from urls.assets; mirror them to docs/assets/el/."""
     wr = next((d for u, (d, _) in A.got.items() if "webpack.runtime" in u and "pro" not in u), b"").decode("utf-8", "replace")
     files = ["js/" + n for n in set(re.findall(r'"([\w.-]+\.bundle\.min\.js)"', wr))] + EL_EXTRA
     base = "https://lali-pich.com" + EL_BASE

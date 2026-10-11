@@ -21,8 +21,11 @@ document.querySelectorAll('form.lp-form').forEach(function (form) {
       }
       location.href = u.toString();
     };
-    if (!SUBMIT_URL) return go();
-    fetch(SUBMIT_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d), keepalive: true })
+    var endpoint = form.dataset.endpoint || SUBMIT_URL; // per-form CRM form slug: data-endpoint="https://lali-crm.tail60e96a.ts.net/f/<slug>"
+    if (!endpoint) return go();
+    d.page = location.pathname; d['bot-field'] = d['bot-field'] || '';
+    var q2 = new URLSearchParams(location.search); ['fbclid', 'ad_id'].forEach(function (k) { if (q2.get(k)) d[k] = q2.get(k); });
+    fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d), keepalive: true })
       .catch(function () {}).then(go);
   });
 });
